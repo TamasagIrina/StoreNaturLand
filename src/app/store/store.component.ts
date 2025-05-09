@@ -4,6 +4,7 @@ import { Type } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 
 export interface StoreComponent {
@@ -19,5 +20,13 @@ export interface StoreComponent {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StoreComponent {
+
+constructor(readonly router: Router){
+
+}
+
+  seeMoreButton(){
+    this.router.navigateByUrl("/mainPage/details");
+  }
 
 }
